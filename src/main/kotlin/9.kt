@@ -1,6 +1,3 @@
-import kotlin.math.pow
-
-
 fun main() {
     fun diff(seq: List<Long>) = generateSequence(seq) {
         s -> (1..<s.size).map { s[it] - s[it - 1] }
