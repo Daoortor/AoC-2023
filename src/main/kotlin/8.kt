@@ -33,18 +33,6 @@ fun main() {
         return step
     }
 
-    fun analyseSequence(start: String, steps: Int, transform: (s: String, step: Long) -> String): Long {
-        var slow = transform(start, 0)
-        var fast = transform(transform(start, 0), 1)
-        var step = 1L
-        while (slow != fast || step.mod(steps) != 0) {
-            slow = transform(slow, step)
-            fast = transform(transform(fast, step*2), step*2+1)
-            step++
-        }
-        return step
-    }
-
     fun gcd(a: Long, b: Long): Long {
         if (a == 0L) {
             return b
